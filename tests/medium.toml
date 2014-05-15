@@ -1,0 +1,87 @@
+# This is a TOML document. Boom.
+
+title = "TOML Example"
+
+[owner]
+name = "Tom Preston-Werner"
+organization = "GitHub"
+escaped_string = "GitHub\""
+escaped_string2 = "GitHub\\\""
+# other = "Oh yeah#yeah"
+bio = "GitHub Cofounder & CEO\nLikes tater tots and beer."
+items = ["jeanyeah","shoes", "pants" ,"hat"]
+items4 = ["jeanyeah\\\"","shoes", "pants" ,"hat"]
+items5 = ["jeanyeah\\\"","sh\\oes", "pants" ,"hat"]
+dob = 1979-05-27T07:32:00Z # First class dates? Why not?
+
+  [owner.stuff]
+  items = [["gun","axe"],[1,2,3]]
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+enabled = true
+last_load = [ 1.2, 3.4 ,2.1 , 1]
+latest_reboot = [1979-05-27T07:32:00Z, 1999-02-27T07:32:00Z , 2000-02-27T07:32:00Z,]
+
+  [database.connection]
+  max = 5000
+  timeout = 10.5
+
+[servers]
+
+names = [
+  "mike","john" # Comment here
+  ]
+
+  # You can indent as you please. Tabs or spaces. TOML don't care.
+  [servers.alpha]
+  ip = "10.0.0.1"
+  dc = "eqdc10"
+
+  [servers.beta]
+  ip = "10.0.0.2"
+  dc = "eqdc10"
+
+[clients]
+data = [ ["gamma", "delta"], [1, 2] ] # just an update to make sure parsers support it
+boolean_array = [true,false,false, true]
+
+# Line breaks are OK when inside arrays
+hosts = [
+  "alpha",
+  "omega",
+]
+
+servers = [
+  123,
+  124,
+  7685
+]
+
+phones = [
+  1.2,
+  7569,
+  -72.0,
+]
+
+planets = [
+  ["earth","yeah","pluton"],
+  ["mars","venus",],
+  ["saturn", "anus"],
+]
+
+cars = [
+  true,
+  false,
+  true, true,
+  false,
+]
+multiline_datetime = [
+  1979-05-27T07:32:00Z,
+  1999-05-27T07:32:00Z ,
+  1989-05-27T07:32:00Z, 
+]
+
+[oh.yeah.test]
+jambon = true
