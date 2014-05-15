@@ -1,12 +1,15 @@
 ![luatomlPic](https://github.com/knd/luatoml/raw/master/luatoml.png)
 
-## License
+## Why TOML?
 
-See [MIT](https://github.com/knd/luatoml/blob/master/LICENSE). Copyright (c) [Khanh Dao](http://www.github.com/knd).
+Think of XML, JSON or YAML, **TOML** has its own advantages. See [https://github.com/mojombo/toml](https://github.com/mojombo/toml).
 
-### Why TOML:
+To be brief, **TOML** is readable (like YAML), ease of use (like YAML), fast (like
+JSON), and can cut straight to the soul of the problem. I prefer to write more
+easy constructs to serve readability as opposed to short, complicated constructs to
+save some space and prove smartness: 
 
-Think of XML or JSON, TOML has its own advantage. See [https://github.com/mojombo/toml](https://github.com/mojombo/toml).
+> At scale, the skill level of developers reading/writing/maintaining/testing code is going to be a normal distribution around the mean of "not expert." ([link](http://www.quora.com/Go-programming-language/Scala-vs-Go-Could-people-help-compare-contrast-these-on-relative-merits-demerits))
 
 ## Usage
 
@@ -21,4 +24,8 @@ Think of XML or JSON, TOML has its own advantage. See [https://github.com/mojomb
 ## Test
 
 TODO: Test against [https://github.com/BurntSushi/toml-test](https://github.com/BurntSushi/toml-test).
+
+## License
+
+See [MIT](https://github.com/knd/luatoml/blob/master/LICENSE). Copyright (c) [Khanh Dao](http://www.github.com/knd).
 
