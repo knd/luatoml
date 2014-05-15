@@ -1,4 +1,6 @@
-luatoml
-=======
+![luatomlPic](https://github.com/knd/luatoml/raw/master/luatoml.png)
 
-serializer and deserializer for toml in lua :
+## License
+
+See [MIT](https://github.com/knd/luatoml/blob/master/LICENSE). Copyright (c) [Khanh Dao](http://www.github.com/knd).
+
