@@ -21,6 +21,12 @@ save some space and prove smartness:
 > luaObject = load(content)
 ```
 
+### Lua Object to TOML
+```lua
+> require "luatoml"
+> luaString = dump(luaObject)
+```
+
 ## Test
 
 TODO: Test against [https://github.com/BurntSushi/toml-test](https://github.com/BurntSushi/toml-test).
