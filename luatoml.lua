@@ -6,9 +6,11 @@ debug = false
 function strip(str) 
 	return string.format( "%s", str:match( "^%s*(.-)%s*$" ) ) 
 end
+
 function replace_char(pos, str, r)
     return ("%s%s%s"):format(str:sub(1,pos-1), r, str:sub(pos+1))
 end
+
 function splitLineToGroupArray(line)
 	local retVal = {}
 	local i = 1
@@ -18,6 +20,7 @@ function splitLineToGroupArray(line)
 	end
 	return retVal
 end
+
 function tableSize(table)
 	local size = 0
 	for i, v in pairs(table) do
@@ -25,6 +28,7 @@ function tableSize(table)
 	end
 	return size
 end
+
 function splitLine(str)
 	local openArr = 0
 	local openString = false
@@ -75,8 +79,8 @@ function splitLine(str)
 		end	
 	end -- end of for loop
 	return str
-	-- for w in string.gmatch(str, "[^\n]+") do print(w) end
 end
+
 function splitAssignment(str)
 	local retVal = {}
 	local i = 1
@@ -105,14 +109,6 @@ function load(str)
 		if string.sub(line, 1, 1) == '[' then
 			line = string.sub(line, 2, #line-1) -- key group name
 			currentLevel = retVal
-			-- for group in string.gmatch(line, "[^.]+") do
-			-- 	if group == "" then error("Can't have keygroup with empty name") end
-			-- 	if currentLevel[group] ~= nil then
-			-- 		if i == 
-			-- 	else
-			-- 		
-			-- 	end
-			-- end
 			groups = splitLineToGroupArray(line)
 			for i, group in ipairs(groups) do
 				if group == "" then error("Can't have keygroup with empty name") end
@@ -146,7 +142,6 @@ function load(str)
 			end
 		end
 	end
-	-- pprint.dump(retVal)
 	return retVal
 end
 
@@ -186,7 +181,6 @@ end
 
 function load_array(a)
 	local retVal = {}
-	-- strip beginning/trailing whitespace
 	a = string.format( "%s", a:match( "^%s*(.-)%s*$" ) ) 
 	a = string.sub(a, 2, #a - 1)
 	local newArr = {}
@@ -195,13 +189,11 @@ function load_array(a)
 	local index = 1
 	for i = 1, #a do
 		local char = string.sub(a, i, i)
-		-- print(char)
 		if char == "[" then
 			openArr = openArr + 1
 		elseif char == "]" then
 			openArr = openArr - 1
 		elseif char == "," and openArr == 0 then
-			-- print(string.sub(a, j, i-1))
 			local subStr = string.sub(a, j, i-1)
 			subStr = string.format( "%s", subStr:match( "^%s*(.-)%s*$" ) ) 
 			newArr[index] = subStr
@@ -217,13 +209,9 @@ function load_array(a)
 	local index = 1
 	for i, v in ipairs(newArr) do
 		if v ~= '' then
-			-- print(v)
 			local loadedVal = load_value(v)
-			-- pprint.dump(loadedVal)
 			local nVal = loadedVal["value"]
 			local nType = loadedVal["type"]
-			-- print(nVal)
-			-- print(nType)
 			if aType then
 				if aType ~= nType then
 					error("Not homogeneous array")
