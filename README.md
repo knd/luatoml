@@ -31,6 +31,8 @@ save some space and prove smartness:
 
 TODO: Test against [https://github.com/BurntSushi/toml-test](https://github.com/BurntSushi/toml-test).
 
+Small changes for testing.
+
 ## License
 
 See [MIT](https://github.com/knd/luatoml/blob/master/LICENSE). Copyright (c) [Khanh Dao](http://www.github.com/knd).
